@@ -1,6 +1,6 @@
 function openLinks(links) {
   const safeLinks = Array.isArray(links) ? links : [];
-  const delay = 500;
+  const delay = 300;
   safeLinks.forEach((link, index) => {
     if (typeof link !== 'string' || !link) {
       return;
