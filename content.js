@@ -66,6 +66,9 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 function collectAccountLinks() {
+  if (!window.location.hash.includes(TARGET_HASH)) {
+    return;
+  }
   const elements = document.querySelectorAll(ACCOUNT_SELECTOR);
   const links = new Set();
 

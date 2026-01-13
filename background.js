@@ -8,7 +8,7 @@ function openLinks(links) {
 
     setTimeout(() => {
       chrome.tabs.create({
-        url: link,
+        url: `${link}#portfolio`,
         active: false
       });
     }, index * delay);
@@ -23,10 +23,6 @@ chrome.runtime.onMessage.addListener((message) => {
 
 chrome.action.onClicked.addListener((tab) => {
   if (!tab?.id) {
-    return;
-  }
-
-  if (!tab.url || !tab.url.startsWith('https://solscan.io/token/') || !tab.url.includes('#holders')) {
     return;
   }
 
