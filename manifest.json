@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "DexTint Holder Opener",
+  "description": "Automatically opens holder market links from Solscan token holders tabs.",
+  "version": "1.0",
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://solscan.io/token/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "DexTint Holder Opener"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://solscan.io/token/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
